@@ -7,13 +7,14 @@ class Plant:
 
     def show(self) -> None:
         print(
-            f"{self.plant_name}: {round(self.plant_height, 3)}cm, {self.plant_age} days old")
+            f"{self.plant_name}: {round(self.plant_height, 3)}cm, "
+            f"{self.plant_age} days old")
 
     def create(self) -> None:
-        print(f"Created: ", end="")
+        print("Created: ", end="")
 
 
-def main():
+def main() -> None:
     p = Plant("Rose", 25.0, 30)
     p1 = Plant("Oak", 200.0, 365)
     p2 = Plant("Cactus", 5.0, 90)
