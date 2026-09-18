@@ -7,7 +7,7 @@ class Plant:
 
     def show(self) -> None:
         print(
-            f"{self.plant_name}: {round(self.plant_height, 3)}cm "
+            f"{self.plant_name}: {round(self.plant_height, 3)}cm"
             f", {self.plant_age} days old")
 
     def create(self) -> None:
@@ -19,7 +19,7 @@ class Plant:
             print("Height update rejected")
         else:
             self.plant_height = height
-            print(f"Height updated: {self.plant_height}cm")
+            print(f"Height updated: {self.get_height()}cm")
 
     def set_age(self, age: int) -> None:
         if age < 0:
@@ -27,8 +27,14 @@ class Plant:
             print("Age update rejected")
         else:
             self.plant_age = age
-            print(f"Age updated: {self.plant_age} days")
-            print("\n")
+            print(f"Age updated: {self.get_age()} days")
+            print()
+
+    def get_height(self) -> float:
+        return self.plant_height
+
+    def get_age(self) -> int:
+        return self.plant_age
 
 
 def main() -> None:
@@ -36,7 +42,7 @@ def main() -> None:
     print("=== Garden Security System ===")
     p.create()
     p.show()
-    print("\n")
+    print()
     p.set_height(25)
     p.set_age(30)
     p.set_height(-1)
