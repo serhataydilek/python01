@@ -21,8 +21,16 @@ class Plant:
     def __init__(self, plant_name: str,
                  plant_height: float, plant_age: int) -> None:
         self.plant_name = plant_name
-        self._height = plant_height
-        self._age = plant_age
+        self._height = 0.0
+        self._age = 0
+        if plant_height < 0:
+            print(f"{self.plant_name}: Error, height can't be negative")
+        else:
+            self._height = plant_height
+        if plant_age < 0:
+            print(f"{self.plant_name}: Error, age can't be negative")
+        else:
+            self._age = plant_age
         self._statistics = self.Statistics()
 
     @staticmethod
@@ -40,10 +48,16 @@ class Plant:
         return self._age
 
     def set_height(self, height: float) -> None:
-        self._height = height
+        if height < 0:
+            print(f"{self.plant_name}: Error, height can't be negative")
+        else:
+            self._height = height
 
     def set_age(self, age: int) -> None:
-        self._age = age
+        if age < 0:
+            print(f"{self.plant_name}: Error, age can't be negative")
+        else:
+            self._age = age
 
     def grow(self, amount: float) -> None:
         self._height += amount

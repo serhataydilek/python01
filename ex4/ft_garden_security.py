@@ -37,7 +37,6 @@ class Plant:
         else:
             self._age = age
             print(f"Age updated: {self.get_age()} days")
-            print()
 
     def get_height(self) -> float:
         return self._height
@@ -51,12 +50,11 @@ def main() -> None:
     print("=== Garden Security System ===")
     p.create()
     p.show()
-    print()
     p.set_height(25)
     p.set_age(30)
     p.set_height(-1)
     p.set_age(-1)
-    print("\nCurrent state: ", end="")
+    print("Current state: ", end="")
     p.show()
 
 
