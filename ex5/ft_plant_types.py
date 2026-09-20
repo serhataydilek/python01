@@ -2,18 +2,30 @@ class Plant:
     def __init__(self, plant_name: str,
                  plant_height: float, plant_age: int) -> None:
         self.plant_name = plant_name
-        self.plant_height = plant_height
-        self.plant_age = plant_age
+        self._height = plant_height
+        self._age = plant_age
+
+    def get_height(self) -> float:
+        return self._height
+
+    def get_age(self) -> int:
+        return self._age
+
+    def set_height(self, height: float) -> None:
+        self._height = height
+
+    def set_age(self, age: int) -> None:
+        self._age = age
 
     def show(self) -> None:
-        print(f"{self.plant_name}: {round(self.plant_height, 3)}cm, "
-              f"{self.plant_age} days old")
+        print(f"{self.plant_name}: {round(self._height, 3)}cm, "
+              f"{self._age} days old")
 
     def grow(self, amount: float) -> None:
-        self.plant_height += amount
+        self._height += amount
 
     def age(self, days: int) -> None:
-        self.plant_age += days
+        self._age += days
 
 
 class Flower(Plant):
@@ -43,7 +55,7 @@ class Tree(Plant):
 
     def produce_shade(self) -> None:
         print(f"Tree {self.plant_name} now produces a shade of "
-              f"{self.plant_height}cm long and {self.trunk_diameter}cm wide.")
+              f"{self._height}cm long and {self.trunk_diameter}cm wide.")
 
     def show(self) -> None:
         super().show()
