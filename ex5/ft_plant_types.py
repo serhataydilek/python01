@@ -36,10 +36,10 @@ class Plant:
               f"{self._age} days old")
 
     def grow(self, amount: float) -> None:
-        self._height += amount
+        self.set_height(self.get_height() + amount)
 
     def age(self, days: int) -> None:
-        self._age += days
+        self.set_age(self.get_age() + days)
 
 
 class Flower(Plant):
